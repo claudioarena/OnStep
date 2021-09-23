@@ -1,6 +1,9 @@
 // -----------------------------------------------------------------------------------
 // Command processing
 
+//Function prototype
+void cmdSend(const char *s, bool ignoreReply = false);
+
 // last RA/Dec time
 unsigned long _coord_t=0;
 
@@ -2341,7 +2344,7 @@ bool cmdWaiting() {
   return false;
 }
 // set command to be processed and if reply should be be ignored
-void cmdSend(const char *s, bool ignoreReply=false) {
+void cmdSend(const char *s, bool ignoreReply) {
   _ignoreReply=ignoreReply;
   _replyX[0]=0;
   cmdX.flush();

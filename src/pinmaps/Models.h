@@ -45,6 +45,10 @@
   #define PINMAP_STR "MaxESP v3"
   #include "Pins.MaxESP3.h"
 #endif
+#if PINMAP == MaxESP3_RCX400
+  #define PINMAP_STR "MaxESP v3 RCX 400 version"
+  #include "Pins.MaxESP3_RCX400.h"
+#endif
 #if PINMAP == CNC3
   #define PINMAP_STR "CNC v3"
   #include "Pins.CNC3.h"

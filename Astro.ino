@@ -1,6 +1,10 @@
 // -----------------------------------------------------------------------------------------------------------------------------
 // Astronomy related functions
 
+//Function prototype
+double trueRefrac(double Alt, double Pressure = 1010.0, double Temperature = 10.0);
+double apparentRefrac(double Alt, double Pressure = 1010.0, double Temperature = 10.0);
+
 // convert string in format MM/DD/YY to julian date
 bool dateToDouble(double *JulianDay, char *date) {
   char m[3],d[3],y[3];
@@ -370,7 +374,7 @@ void horToEqu(double Alt, double Azm, double *HA, double *Dec) {
 }
 
 // returns the amount of refraction (in arcminutes) at the given true altitude (degrees), pressure (millibars), and temperature (celsius)
-double trueRefrac(double Alt, double Pressure=1010.0, double Temperature=10.0) {
+double trueRefrac(double Alt, double Pressure, double Temperature) {
   if (isnan(Pressure)) Pressure=1010.0;
   if (isnan(Temperature)) Temperature=10.0;
   double TPC=(Pressure/1010.0) * (283.0/(273.0+Temperature));
@@ -379,7 +383,7 @@ double trueRefrac(double Alt, double Pressure=1010.0, double Temperature=10.0) {
 }
 
 // returns the amount of refraction (in arcminutes) at the given apparent altitude (degrees), pressure (millibars), and temperature (celsius)
-double apparentRefrac(double Alt, double Pressure=1010.0, double Temperature=10.0) {
+double apparentRefrac(double Alt, double Pressure, double Temperature) {
   if (isnan(Pressure)) Pressure=1010.0;
   if (isnan(Temperature)) Temperature=10.0;
   double r=trueRefrac(Alt,Pressure,Temperature);

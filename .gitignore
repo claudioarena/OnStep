@@ -43,3 +43,6 @@
 
 # SVN folders
 .svn
+
+# Arduino library folder
+/lib

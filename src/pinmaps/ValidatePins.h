@@ -50,6 +50,9 @@
 #if PINMAP == MaxESP3
   #include "Validate.MaxESP3.h"
 #endif
+#if PINMAP == MaxESP3_RCX400
+  #include "Validate.MaxESP3_RCX400.h"
+#endif
 #if PINMAP == CNC3
   #include "Validate.CNC3.h"
 #endif
