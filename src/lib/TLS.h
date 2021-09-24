@@ -146,8 +146,13 @@ class timeLocationSource {
         // see if the RTC is present
         if (_Rtc.GetIsRunning()) {
           // frequency 0 (1Hz) on the SQW pin
+#if PPS_SENSE == ON
           _Rtc.SetSquareWavePin(DS3231SquareWavePin_ModeClock);
           _Rtc.SetSquareWavePinClockFrequency(DS3231SquareWaveClock_1Hz);
+#else
+          _Rtc.Enable32kHzPin(false);
+          _Rtc.SetSquareWavePin(DS3231SquareWavePin_ModeNone);
+#endif
           active=true;
         } else DLF("WRN, tls.init(): DS3231 GetIsRunning() false");
       } else DLF("WRN, tls.init(): DS3231 not found at I2C address 0x68");

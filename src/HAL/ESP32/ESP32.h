@@ -66,6 +66,9 @@ void HAL_Initialize(void) {
   uint32_t startTime,npp;
   cli(); startTime=micros(); delayNanoseconds(65535); npp=micros(); sei(); npp=((int32_t)(npp-startTime)*1000)/63335;
   if (npp<1) npp=1; if (npp>2000) npp=2000; _nanosPerPass=npp;
+#if defined(SDA_PIN) && defined(SCL_PIN)
+  HAL_Wire.begin(SDA_PIN, SCL_PIN);
+#endif
 }
 
 #include "Analog.h"
