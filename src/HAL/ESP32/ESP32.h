@@ -50,6 +50,11 @@
 #include <Wire.h>
 #define HAL_Wire Wire
 #define HAL_WIRE_CLOCK 100000
+#if defined(SDA_PIN) && defined(SCL_PIN)
+#define HAL_Wire_begin HAL_Wire.begin(SDA_PIN, SCL_PIN)
+#else
+#define HAL_Wire_begin HAL_Wire.begin()
+#endif
 
 //--------------------------------------------------------------------------------------------------
 // Nanoseconds delay function

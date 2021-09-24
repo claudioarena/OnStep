@@ -123,6 +123,7 @@ class timeLocationSource {
 // -----------------------------------------------------------------------------------
 // DS3231 RTC support 
 // uses the default I2C port in most cases; though HAL_Wire can redirect to another port (as is done for the Teensy3.5/3.6)
+// HAL_Wire_begin changes SDA and SCL pins if they are specified in the Pin map.
 
 #include <Wire.h>
 #include <RtcDS3231.h>          // https://github.com/Makuna/Rtc/archive/master.zip
@@ -134,7 +135,7 @@ class timeLocationSource {
 
     // initialize (also enables the RTC PPS if available)
     bool init() {
-      HAL_Wire.begin();
+      HAL_Wire_begin;
       HAL_Wire.setClock(HAL_WIRE_CLOCK);
       HAL_Wire.beginTransmission(0x68);
       bool error = HAL_Wire.endTransmission() != 0;
@@ -153,7 +154,7 @@ class timeLocationSource {
       } else DLF("WRN, tls.init(): DS3231 not found at I2C address 0x68");
       #ifdef HAL_WIRE_RESET_AFTER_CONNECT
         HAL_Wire.end();
-        HAL_Wire.begin();
+        HAL_Wire_begin;
         HAL_Wire.setClock(HAL_WIRE_CLOCK);
       #endif
       return active;

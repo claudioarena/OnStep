@@ -6,7 +6,9 @@
 // The multi-purpose pins (Aux3..Aux8 can be analog pwm/dac if supported)
 #define Aux2                  4     // ESP8266 RST control, or MISO for Axis1&2, or Axis4 EN support
 #define Aux3                 32     // Home SW for Axis1, or I2C SDA
+#define SDA_PIN              Aux3
 #define Aux4                 25     // Home SW for Axis2, or I2C SCL
+#define SCL_PIN              Aux4
 #define Aux7                 04     // Limit SW, PPS, etc.
 #define Aux8                 27     // OneWire, Status LED, Status2 LED, Reticle LED, Tone, etc.
 #define Aux9                 25
