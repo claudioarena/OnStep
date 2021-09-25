@@ -33,7 +33,7 @@
 class nvs {
   public:    
     bool init() {
-      HAL_Wire_begin;
+      HAL_Wire.begin();
       HAL_Wire.setClock(HAL_WIRE_CLOCK);
       _eeprom_addr = I2C_EEPROM_ADDRESS;
 

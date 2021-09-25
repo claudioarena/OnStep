@@ -27,7 +27,6 @@
 #include <Wire.h>
 #define HAL_Wire Wire
 #define HAL_WIRE_CLOCK 100000
-#define HAL_Wire_begin HAL_Wire.begin()
 
 // Non-volatile storage ------------------------------------------------------------------------------
 #if defined(NV_AT24C32_PLUS)
