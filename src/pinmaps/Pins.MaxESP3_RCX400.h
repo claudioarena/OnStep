@@ -7,6 +7,10 @@
 #define SDA_PIN              32
 #define SCL_PIN              25
 
+//Serial B
+#define SERIAL_B_RX          39
+#define SERIAL_B_TX          18
+
 // The multi-purpose pins (Aux3..Aux8 can be analog pwm/dac if supported)
 #define Aux2                  4     // ESP8266 RST control, or MISO for Axis1&2, or Axis4 EN support
 #define Aux3                 32     // Home SW for Axis1
@@ -18,8 +22,8 @@
 #ifndef OneWirePin
 #define OneWirePin       Aux9     // Default Pin for OneWire bus
 #endif
-#define AddonBootModePin     26     // ESP8266 GPIO0 (Dir2)
-#define AddonResetPin      Aux2     // ESP8266 RST
+#define AddonBootModePin     16     // ESP8266 GPIO0 (Dir2)
+#define AddonResetPin        14     // ESP8266 RST
 
 // The PEC index sense is a logic level input, resets the PEC index on rising edge then waits for 60 seconds before allowing another reset
 #define PecPin               36
@@ -27,7 +31,7 @@
 
 // The status LED is a two wire jumper with a 10k resistor in series to limit the current to the LED
 #define LEDnegPin          Aux8     // Drain
-#define LEDneg2Pin         Aux8     // Drain
+#define LEDneg2Pin         2     // Drain
 #define ReticlePin         Aux8     // Drain
 
 // For a piezo buzzer
@@ -47,7 +51,7 @@
 #define Axis1_M2             23     // Microstep Mode 2 or SPI CS
 #define Axis1_M3           Aux2     // SPI MISO/Fault
 #define Axis1_STEP           15     // Step
-#define Axis1_DIR             2     // Dir
+#define Axis1_DIR             5     // Dir //2
 #define Axis1_DECAY    Axis1_M2     // Decay mode
 #define Axis1_HOME         Aux3     // Sense home position
 

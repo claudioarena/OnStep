@@ -24,7 +24,7 @@
 #define ASSIGNED_AUX8 PIN_DEDICATED
 #endif
 #endif
-
+/*
 #if LED_STATUS2 == ON
 #if ASSIGNED_AUX8 != PIN_NOT_ASSIGNED
 #error "Configuration (Config.h): LED_STATUS2 enabled but Aux8 is already in use, choose one feature on Aux8"
@@ -33,6 +33,7 @@
 #define ASSIGNED_AUX8 PIN_DEDICATED
 #endif
 #endif
+*/
 
 #if LED_RETICLE == ON
 #if ASSIGNED_AUX8 != PIN_NOT_ASSIGNED

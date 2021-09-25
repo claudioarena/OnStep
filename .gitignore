@@ -46,3 +46,4 @@
 
 # Arduino library folder
 /lib
+/addons/Wifi/lib
