@@ -107,6 +107,7 @@
   // dedicated pin
 #endif
 
+/*
 #if LIMIT_SENSE != OFF
 #if ASSIGNED_AUX7 != PIN_NOT_ASSIGNED
 #error "Configuration (Config.h): LIMIT_SENSE enabled but Aux7 is already in use, choose one feature on Aux7"
@@ -115,6 +116,7 @@
 #define ASSIGNED_AUX7 PIN_DEDICATED
 #endif
 #endif
+*/
 
 #if HOME_SENSE != OFF
 #if ASSIGNED_AUX3 != PIN_NOT_ASSIGNED
