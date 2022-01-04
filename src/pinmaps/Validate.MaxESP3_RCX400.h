@@ -24,7 +24,7 @@
 #define ASSIGNED_AUX8 PIN_DEDICATED
 #endif
 #endif
-
+/*
 #if LED_STATUS2 == ON
 #if ASSIGNED_AUX8 != PIN_NOT_ASSIGNED
 #error "Configuration (Config.h): LED_STATUS2 enabled but Aux8 is already in use, choose one feature on Aux8"
@@ -33,6 +33,7 @@
 #define ASSIGNED_AUX8 PIN_DEDICATED
 #endif
 #endif
+*/
 
 #if LED_RETICLE == ON
 #if ASSIGNED_AUX8 != PIN_NOT_ASSIGNED
@@ -106,6 +107,7 @@
   // dedicated pin
 #endif
 
+/*
 #if LIMIT_SENSE != OFF
 #if ASSIGNED_AUX7 != PIN_NOT_ASSIGNED
 #error "Configuration (Config.h): LIMIT_SENSE enabled but Aux7 is already in use, choose one feature on Aux7"
@@ -114,6 +116,7 @@
 #define ASSIGNED_AUX7 PIN_DEDICATED
 #endif
 #endif
+*/
 
 #if HOME_SENSE != OFF
 #if ASSIGNED_AUX3 != PIN_NOT_ASSIGNED

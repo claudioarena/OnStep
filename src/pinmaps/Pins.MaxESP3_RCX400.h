@@ -18,8 +18,8 @@
 #ifndef OneWirePin
 #define OneWirePin       Aux9     // Default Pin for OneWire bus
 #endif
-#define AddonBootModePin     26     // ESP8266 GPIO0 (Dir2)
-#define AddonResetPin      Aux2     // ESP8266 RST
+#define AddonBootModePin     Axis2_DIR     // ESP8266 GPIO0 (Dir2)
+#define AddonResetPin        14     // ESP8266 RST
 
 // The PEC index sense is a logic level input, resets the PEC index on rising edge then waits for 60 seconds before allowing another reset
 #define PecPin               36
@@ -27,7 +27,7 @@
 
 // The status LED is a two wire jumper with a 10k resistor in series to limit the current to the LED
 #define LEDnegPin          Aux8     // Drain
-#define LEDneg2Pin         Aux8     // Drain
+#define LEDneg2Pin         OFF     // Drain
 #define ReticlePin         Aux8     // Drain
 
 // For a piezo buzzer
@@ -38,29 +38,29 @@
 // The PPS pin is a 3.3V logic input, OnStep measures time between rising edges and adjusts the internal sidereal clock frequency
 #define PpsPin             Aux7     // PPS time source, GPS for example
 
-#define LimitPin           Aux7     // The limit switch sense is a logic level input normally pull high (2k resistor,) shorted to ground it stops gotos/tracking
+#define LimitPin           0     // The limit switch sense is a logic level input normally pull high (2k resistor,) shorted to ground it stops gotos/tracking
 
 // Axis1 RA/Azm step/dir driver
-#define Axis1_EN             12     // Enable
-#define Axis1_M0             13     // Microstep Mode 0 or SPI MOSI
-#define Axis1_M1             14     // Microstep Mode 1 or SPI SCK
-#define Axis1_M2             23     // Microstep Mode 2 or SPI CS
-#define Axis1_M3           Aux2     // SPI MISO/Fault
-#define Axis1_STEP           15     // Step
-#define Axis1_DIR             2     // Dir
-#define Axis1_DECAY    Axis1_M2     // Decay mode
-#define Axis1_HOME         Aux3     // Sense home position
+#define Axis1_EN            12     // Enable
+#define Axis1_M0            16     // Microstep Mode 0 or SPI MOSI
+#define Axis1_M1            OFF     // Microstep Mode 1 or SPI SCK
+#define Axis1_M2            OFF     // Microstep Mode 2 or SPI CS
+#define Axis1_M3            OFF     // SPI MISO/Fault
+#define Axis1_STEP          23     // Step
+#define Axis1_DIR            2     // Dir //2
+#define Axis1_DECAY	        OFF     // Decay mode
+#define Axis1_HOME         OFF     // Sense home position
 
 // Axis2 Dec/Alt step/dir driver
 #define Axis2_EN         SHARED     // Enable pin control shared with Axis1
-#define Axis2_M0             13     // Microstep Mode 0 or SPI MOSI
-#define Axis2_M1             14     // Microstep Mode 1 or SPI SCK
-#define Axis2_M2              5     // Microstep Mode 2 or SPI CS
-#define Axis2_M3           Aux2     // SPI MISO/Fault
-#define Axis2_STEP           17     // Step
-#define Axis2_DIR            16     // Dir
-#define Axis2_DECAY    Axis2_M2     // Decay mode
-#define Axis2_HOME         Aux4     // Sense home position
+#define Axis2_M0            26     // Microstep Mode 0 or SPI MOSI
+#define Axis2_M1            OFF     // Microstep Mode 1 or SPI SCK
+#define Axis2_M2            OFF     // Microstep Mode 2 or SPI CS
+#define Axis2_M3            OFF     // SPI MISO/Fault
+#define Axis2_STEP           21     // Step
+#define Axis2_DIR            17     // Dir
+#define Axis2_DECAY	        OFF     // Decay mode
+#define Axis2_HOME         OFF     // Sense home position
 
 // For rotator stepper driver
 #define Axis3_EN            OFF     // No enable pin control (always enabled)
@@ -79,7 +79,7 @@
 
 // ST4 interface
 #define ST4RAw               35     // ST4 RA- West
-#define ST4DEs                35     // ST4 DE- South
+#define ST4DEs                9     // ST4 DE- South
 #define ST4DEn               33     // ST4 DE+ North
 #define ST4RAe               34     // ST4 RA+ East
 
