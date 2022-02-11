@@ -7,6 +7,10 @@
 #define SDA_PIN              32
 #define SCL_PIN              25
 
+//Serial B
+#define SERIAL_B_RX          39
+#define SERIAL_B_TX          18
+
 // The multi-purpose pins (Aux3..Aux8 can be analog pwm/dac if supported)
 #define Aux2                  4     // ESP8266 RST control, or MISO for Axis1&2, or Axis4 EN support
 #define Aux3                 32     // Home SW for Axis1
