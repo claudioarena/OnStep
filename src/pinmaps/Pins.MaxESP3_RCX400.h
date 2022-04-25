@@ -73,7 +73,7 @@
 
 // For focuser1 stepper driver
 #define Axis4_EN            OFF   // Enable pin on Aux2 but can be turned OFF during validation
-#define Axis4_STEP           35     // Step
+#define Axis4_STEP           22     // Step
 #define Axis4_DIR            13     // Dir
 
 // For focuser2 stepper driver
